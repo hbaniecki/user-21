@@ -6,7 +6,7 @@ Demo for the useR! 2021 conference talk:
 
 Find a live demo at https://hbaniecki.github.io/user-21
 
-![modelStudio](modelStudio.png)
+![Arena](docs/Arena.gif)
 
 ## What factors correlate with happiness at national level?
 

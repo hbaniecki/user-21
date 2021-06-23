@@ -19,7 +19,7 @@ explainer_gbm <- explain(model_gbm,
                          y = happiness$score)
 
 # choose observations to be explained
-observations <- happiness[1:10, ]
+observations <- happiness[1:10,]
 
 # make an Arena for the models
 library("dplyr", quietly=TRUE, warn.conflicts = FALSE)
