@@ -22,7 +22,7 @@ explainer_gbm <- explain(model_gbm,
 observations <- happiness[1:10,]
 
 # make an Arena for the models
-library("dplyr", quietly=TRUE, warn.conflicts = FALSE)
+library("tidyr", quietly=TRUE, warn.conflicts = FALSE)
 arena <- create_arena(live=TRUE) %>%
   push_model(explainer_rf) %>%
   push_model(explainer_gbm) %>%
