@@ -1,8 +1,10 @@
-# xai-happiness
+# user-21
 
-XAI use case based on world-happiness data.
+Demo for the useR! 2021 conference talk:
 
-Find a live demo: https://pbiecek.github.io/xai-happiness/
+> Open the Machine Learning Black-Box with modelStudio & Arena
+
+Find a live demo at https://hbaniecki.github.io/user-21
 
 ![modelStudio](modelStudio.png)
 
@@ -20,16 +22,58 @@ library("DALEX")
 library("modelStudio")
 library("ranger")
 
-# get data
+# load data
 happiness <- readRDS("happiness.rds")
 
-# get model and explainer
+# fit a model
 model <- ranger(score~., data = happiness)
-modelr <- explain(model, data = happiness[,-1], y = happiness$score)
 
-# get model studio
-ms <- modelStudio(modelr, happiness[c("Poland","Finland","Germany"),],
+# create an explainer for the model  
+explainer <- explain(model, data = happiness[,-1], y = happiness$score)
+
+# make a Studio for the model
+ms <- modelStudio(explainer,
+                  happiness[c("Poland", "Finland", "Germany"),],
                   options = ms_options(margin_left = 220))
+                  
+# explain!
 ms
+```
+
+4. Compare multiple models with [Arena](https://arena.drwhy.ai/docs/)
+
+```r
+library("DALEX")
+library("arenar")
+library("ranger")
+library("gbm")
+
+# load data
+happiness <- readRDS("happiness.rds")
+
+# fit models
+model_rf <- ranger(score~., data = happiness)
+model_gbm <- gbm(score~., data = happiness)
+
+# create explainers for the models
+explainer_rf <- explain(model_rf,
+                        data = happiness[,-1],
+                        y = happiness$score)
+explainer_gbm <- explain(model_gbm,
+                         data = happiness[,-1],
+                         y = happiness$score)
+
+# choose observations to be explained
+observations <- happiness[1:10, ]
+
+# make an Arena for the models
+library("dplyr", quietly=TRUE, warn.conflicts = FALSE)
+arena <- create_arena(live=TRUE) %>%
+  push_model(explainer_rf) %>%
+  push_model(explainer_gbm) %>%
+  push_observations(observations)
+
+# explain!
+run_server(arena)
 ```
 
