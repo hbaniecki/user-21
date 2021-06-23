@@ -4,9 +4,9 @@ Demo for the useR! 2021 conference talk:
 
 > Open the Machine Learning Black-Box with modelStudio & Arena
 
-Find a live demo at https://hbaniecki.github.io/user-21
+Find a modelStudio demo at https://hbaniecki.github.io/user-21
 
-![Arena](docs/arena.png)
+Find an Arena demo at TBD
 
 ## What factors correlate with happiness at national level?
 
@@ -67,7 +67,7 @@ explainer_gbm <- explain(model_gbm,
 observations <- happiness[1:10, ]
 
 # make an Arena for the models
-library("dplyr", quietly=TRUE, warn.conflicts = FALSE)
+library("tidyr", quietly=TRUE, warn.conflicts = FALSE)
 arena <- create_arena(live=TRUE) %>%
   push_model(explainer_rf) %>%
   push_model(explainer_gbm) %>%
@@ -77,3 +77,4 @@ arena <- create_arena(live=TRUE) %>%
 run_server(arena)
 ```
 
+![Arena](docs/arena.png)
