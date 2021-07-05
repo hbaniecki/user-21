@@ -1,5 +1,7 @@
 # user-21
 
-Demo for the modelStudio & Arenar part of the useR! 2021 workshop:
+Preliminaries for the modelStudio & Arena part of the useR! 2021 workshop:
 
 > Introduction to Responsible Machine Learning
+
+Follow https://github.com/MI2DataLab/ResponsibleML-UseR2021 for the complete materials.
