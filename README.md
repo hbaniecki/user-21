@@ -6,7 +6,9 @@ Demo for the useR! 2021 conference talk:
 
 Find a modelStudio demo at https://hbaniecki.github.io/user-21
 
-Find an Arena demo at TBD
+Upload an Arena demo at http://arena.drwhy.ai/?app using [the following URL](https://gist.githubusercontent.com/hbaniecki/cd968d512b803549397db1695fcd0be8/raw/292784bd92d634481236e43c592fd9f5abca28b8/arena_happiness.json) or [by downloading the data from GitHub](https://github.com/hbaniecki/user-21/blob/main/workshop/arena_happiness.json).
+
+![upload](docs/upload.png)
 
 ## What factors correlate with happiness at national level?
 
