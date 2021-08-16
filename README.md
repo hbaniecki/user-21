@@ -2,7 +2,7 @@
 
 Demo for the useR! 2021 conference talk:
 
-> Open the Machine Learning Black-Box with modelStudio & Arena
+> Open the Machine Learning Black-Box with modelStudio & Arena [[video on YouTube]](https://www.youtube.com/watch?v=tiR9ClOEaqM)
 
 Find a modelStudio demo at https://hbaniecki.github.io/user-21
 
